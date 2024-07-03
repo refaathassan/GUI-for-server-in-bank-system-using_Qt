@@ -1,0 +1,18 @@
+[
+    {
+        "accountnumber": "34323",
+        "balance": 20,
+        "fullname": "ali hassan  ahmed",
+        "password": "12345",
+        "type": "user",
+        "username": "mohamed"
+    },
+    {
+        "accountnumber": null,
+        "balance": null,
+        "fullname": " ahmed mohamed ali",
+        "password": "1234",
+        "type": "admin",
+        "username": "refaathassan"
+    }
+]
