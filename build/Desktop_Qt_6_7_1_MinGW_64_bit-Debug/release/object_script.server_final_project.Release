@@ -8,6 +8,7 @@ release/main.o
 release/maketransactionhandler.o
 release/server.o
 release/serverhandler.o
+release/transferamounthandler.o
 release/viewaccountbalancehandler.o
 release/viewdatabase.o
 release/moc_adduserhandler.o
@@ -19,5 +20,6 @@ release/moc_loghandler.o
 release/moc_maketransactionhandler.o
 release/moc_server.o
 release/moc_serverhandler.o
+release/moc_transferamounthandler.o
 release/moc_viewaccountbalancehandler.o
 release/moc_viewdatabase.o

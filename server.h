@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QTcpServer>
 #include <QTextStream>
-#include <QDebug>
+//#include <QDebug>
 #include "serverhandler.h"
 class Server : public QTcpServer
 {

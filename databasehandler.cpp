@@ -74,11 +74,12 @@ void DataBaseHandler::InitDatatBase(void)
             QJsonObject js=ele.toObject();
             jsonVec<<js;
         }
-        qDebug()<<" readed file"<<Qt::endl;
+        //qDebug()<<" readed file"<<Qt::endl;
         file.close();
     }
-    else
-        qDebug()<<" i can not oppen this file"<<Qt::endl;
+    else{
+       // qDebug()<<" i can not oppen this file"<<Qt::endl;
+    }
 
 
 }

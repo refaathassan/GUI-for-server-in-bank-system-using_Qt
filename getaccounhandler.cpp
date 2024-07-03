@@ -59,7 +59,7 @@ QJsonObject GetAccounHandler::Handling(QJsonObject json)
         }
         else{}
     }
-    qDebug()<<Handler::CurrentType<<"   "<<Handler::CurrentAcountNumber<<Qt::endl;
+    //qDebug()<<Handler::CurrentType<<"   "<<Handler::CurrentAcountNumber<<Qt::endl;
     return news;
 }
 

@@ -1,11 +1,19 @@
 [
     {
         "accountnumber": "34323",
-        "balance": 20,
+        "balance": 10,
         "fullname": "ali hassan  ahmed",
         "password": "12345",
         "type": "user",
         "username": "mohamed"
+    },
+    {
+        "accountnumber": "3432",
+        "balance": 60,
+        "fullname": "ali hassan  ahmed",
+        "password": "1245",
+        "type": "user",
+        "username": "alis"
     },
     {
         "accountnumber": null,

@@ -10,7 +10,6 @@ MakeTransactionHandler::MakeTransactionHandler(QObject *parent)
 QJsonObject MakeTransactionHandler::Handling(QJsonObject json)
 {
     bool flag=false;
-    bool isDigit=false;
     QJsonObject news;
     if(json["Request"].toString()=="MakeTransaction")
     {
@@ -23,7 +22,7 @@ QJsonObject MakeTransactionHandler::Handling(QJsonObject json)
             {
                 if(vv["accountnumber"].toString()==CurrentAcountNumber)
                 {
-                    qDebug()<<json["amount"]<<"  "<<json["amount"].toInt()<<"i am in processing  "<<"  "<<isDigit<<Qt::endl;
+                    //qDebug()<<json["amount"]<<"  "<<json["amount"].toInt()<<"i am in processing  "<<"  "<<isDigit<<Qt::endl;
                     if(((vv["balance"].toInt()+json["amount"].toInt())>=0))
                     {
                         flag=true;
@@ -61,7 +60,7 @@ QJsonObject MakeTransactionHandler::Handling(QJsonObject json)
         }
         else{}
     }
-    qDebug()<<Handler::CurrentType<<"   "<<Handler::CurrentAcountNumber<<Qt::endl;
+    //qDebug()<<Handler::CurrentType<<"   "<<Handler::CurrentAcountNumber<<Qt::endl;
     return news;
 }
 

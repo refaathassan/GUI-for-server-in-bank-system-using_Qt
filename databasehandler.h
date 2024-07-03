@@ -6,7 +6,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QFile>
-#include <QDebug>
+//#include <QDebug>
 #include <QVector>
 class DataBaseHandler : public QObject
 {

@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QThread>
 #include <QTcpSocket>
-#include <QDebug>
+//#include <QDebug>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include "loghandler.h"
@@ -14,6 +14,7 @@
 #include "deletehandler.h"
 #include "adduserhandler.h"
 #include "maketransactionhandler.h"
+#include "transferamounthandler.h"
 class ServerHandler : public QThread
 {
     Q_OBJECT
@@ -35,6 +36,7 @@ private:
     Handler *PRU5;
     Handler *PRU6;
     Handler *PRU7;
+    Handler *PRU8;
     // QThread interface
 protected:
     void run();

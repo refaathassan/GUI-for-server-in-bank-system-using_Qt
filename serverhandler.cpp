@@ -11,12 +11,14 @@ ServerHandler::ServerHandler(qint32 ID, QObject *parent): QThread{parent},ID{ID}
     PRU5=new DeleteHandler();
     PRU6=new AddUserHandler();
     PRU7=new MakeTransactionHandler();
+    PRU8=new TransferAmountHandler();
     PRU1->SetNextHandler(PRU2);
     PRU2->SetNextHandler(PRU3);
     PRU3->SetNextHandler(PRU4);
     PRU4->SetNextHandler(PRU5);
     PRU5->SetNextHandler(PRU6);
     PRU6->SetNextHandler(PRU7);
+    PRU7->SetNextHandler(PRU8);
     //connect(PRU1,&Handler::SendToSocket,this,&ServerHandler::SendMassage);
 }
 
@@ -33,7 +35,7 @@ void ServerHandler::OnReadyRead()
 {
 
     QByteArray B_arrary=soc->readAll();
-   // qDebug()<<"on ready read"<<B_arrary<<Qt::endl;
+    qDebug()<<"on ready read"<<B_arrary<<Qt::endl;
     //QString str=QString(B_arrary);
     QJsonDocument json=QJsonDocument::fromJson(B_arrary);
     QJsonObject jsonObj=json.object();
