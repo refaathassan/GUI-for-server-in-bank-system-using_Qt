@@ -1,0 +1,16 @@
+ [2024-07-06T02:29:01]  Request from   "mohamed"  to log   
+
+ [2024-07-06T02:29:01]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"user\"}" 
+
+ [2024-07-06T02:29:03]  Request from user   "34323"  to View Account Balance 
+
+ [2024-07-06T02:29:03]  on ready send "{\"Request\":\"ViewAccountBalance\",\"Response\":85}" 
+
+ [2024-07-06T02:29:04]  on ready send "{}" 
+
+ [2024-07-06T02:29:05]  on ready send "{}" 
+
+ [2024-07-06T02:29:06]  on ready send "{}" 
+
+ [2024-07-06T02:29:06]  on ready send "{}" 
+

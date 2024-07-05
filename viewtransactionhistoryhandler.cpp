@@ -25,7 +25,7 @@ QJsonObject ViewTransactionHistoryHandler::Handling(QJsonObject json)
                 if(vv["accountnumber"].toString()==json["accountnumber"].toString())
                 {
                     flag=true;
-                    QJsonArray arr=vv["transaction"].toArray();
+                    QJsonArray arr=vv["transactions"].toArray();
                     QJsonArray arr1;
                     if(arr.size()<=json["count"].toInt())
                     {

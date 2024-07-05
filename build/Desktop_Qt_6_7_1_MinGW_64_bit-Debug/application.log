@@ -146,3 +146,51 @@
 
  [2024-07-05T18:23:53]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user not updated\"}" 
 
+ [2024-07-06T02:34:58]  Request from   "mohamed"  to log   
+
+ [2024-07-06T02:34:58]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"user\"}" 
+
+ [2024-07-06T02:35:00]  on ready send "{}" 
+
+ [2024-07-06T02:35:02]  on ready send "{}" 
+
+ [2024-07-06T02:35:51]  Request from  admin to log   
+
+ [2024-07-06T02:35:51]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-06T02:36:02]  on ready send "{}" 
+
+ [2024-07-06T02:36:03]  on ready send "{}" 
+
+ [2024-07-06T02:36:11]  on ready send "{}" 
+
+ [2024-07-06T02:36:17]  on ready send "{}" 
+
+ [2024-07-06T02:36:18]  on ready send "{}" 
+
+ [2024-07-06T02:36:20]  on ready send "{}" 
+
+ [2024-07-06T02:36:21]  on ready send "{}" 
+
+ [2024-07-06T02:36:21]  on ready send "{}" 
+
+ [2024-07-06T02:36:21]  on ready send "{}" 
+
+ [2024-07-06T02:36:22]  on ready send "{}" 
+
+ [2024-07-06T02:36:39]  Request from   "mohamed"  to log   
+
+ [2024-07-06T02:36:39]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"user\"}" 
+
+ [2024-07-06T02:36:41]  on ready send "{}" 
+
+ [2024-07-06T02:36:53]  on ready send "{}" 
+
+ [2024-07-06T02:43:43]  Request from   "mohamed"  to log   
+
+ [2024-07-06T02:43:43]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"user\"}" 
+
+ [2024-07-06T02:43:44]  Request from user   "34323"  to View Transaction History 
+
+ [2024-07-06T02:43:44]  on ready send "{\"Request\":\"ViewTransactionHistory\",\"Response\":[{\"amount\":20,\"date\":\"2024-07-05 04:29:07\",\"descraption\":\"deposit\"},{\"amount\":10,\"date\":\"2024-07-04 19:46:12\",\"descraption\":\"send to 3432\"},{\"amount\":10,\"date\":\"2024-07-04 19:45:59\",\"descraption\":\"send to 3432\"},{\"amount\":10,\"date\":\"2024-07-04 19:45:59\",\"descraption\":\"send to 3432\"},{\"amount\":10,\"date\":\"2024-07-04 19:45:50\",\"descraption\":\"send to 3432\"}]}" 
+

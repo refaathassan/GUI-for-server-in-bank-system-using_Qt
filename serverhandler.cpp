@@ -13,7 +13,7 @@ ServerHandler::ServerHandler(qint32 ID, QObject *parent): QThread{parent},ID{ID}
     PRU7=new MakeTransactionHandler();
     PRU8=new TransferAmountHandler();
     PRU9=new ViewTransactionHistoryHandler();
-    PRU9=new UpdateUserHandler();
+    PRU10=new UpdateUserHandler();
     PRU1->SetNextHandler(PRU2);
     PRU2->SetNextHandler(PRU3);
     PRU3->SetNextHandler(PRU4);
