@@ -15,7 +15,7 @@ QJsonObject MakeTransactionHandler::Handling(QJsonObject json)
     QJsonObject tran_obj;
     if(json["Request"].toString()=="MakeTransaction")
     {
-        //qDebug()<<"log request"<<Qt::endl;
+        qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Make Transaction "<<Qt::endl;
         base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         if(Handler::CurrentType=="user")

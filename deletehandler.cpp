@@ -18,7 +18,7 @@ QJsonObject DeleteHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-
+            qDebug()<<"Request from admin to Delete User"<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 if(vv["accountnumber"].toString()==json["accountnumber"].toString())

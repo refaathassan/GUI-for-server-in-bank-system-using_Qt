@@ -29,7 +29,7 @@ void ServerHandler::OnDisconnect()
     if(soc->isOpen())
     {
         soc->close();
-        qDebug()<<"client =>"<<ID<<"  Disconnected  "<<Qt::endl;
+        //qDebug()<<"client =>"<<ID<<"  Disconnected  "<<Qt::endl;
     }
 }
 
@@ -37,7 +37,7 @@ void ServerHandler::OnReadyRead()
 {
 
     QByteArray B_arrary=soc->readAll();
-    qDebug()<<"on ready read"<<B_arrary<<Qt::endl;
+    //qDebug()<<"on ready read"<<B_arrary<<Qt::endl;
     //QString str=QString(B_arrary);
     QJsonDocument json=QJsonDocument::fromJson(B_arrary);
     QJsonObject jsonObj=json.object();
@@ -68,7 +68,7 @@ void ServerHandler::SendMassage(QJsonObject json)
         QByteArray byte=QJsonDocument(json).toJson(QJsonDocument::Compact);
         // QString str=QString("JsonSize:%1/").arg(byte.size());
         // byte.prepend(str.toUtf8());
-        qDebug()<<"on ready send"<<byte<<Qt::endl;
+        //qDebug()<<"on ready send"<<byte<<Qt::endl;
         soc->write(byte);
     }
 }
@@ -87,7 +87,7 @@ void ServerHandler::Operation(QJsonObject json)
 
 void ServerHandler::run()
 {
-    qDebug()<<"client=>  "<<ID<<"   is running in thread=> "<<QThread::currentThreadId()<<Qt::endl;
+    //qDebug()<<"client=>  "<<ID<<"   is running in thread=> "<<QThread::currentThreadId()<<Qt::endl;
     soc=new QTcpSocket;
     soc->setSocketDescriptor(ID);
     connect(soc,&QTcpSocket::readyRead,this,&ServerHandler::OnReadyRead,Qt::DirectConnection);

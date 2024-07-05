@@ -23,7 +23,7 @@ void Server::StartServer()
 
 void Server::incomingConnection(qintptr handle)
 {
-    qDebug()<<"client  "<<handle<<"  connected "<<Qt::endl;
+    //qDebug()<<"client  "<<handle<<"  connected "<<Qt::endl;
     ServerHandler* hand=new ServerHandler(handle,this);
     connect(hand,&QThread::finished,hand,&QThread::deleteLater);
     hand->start();

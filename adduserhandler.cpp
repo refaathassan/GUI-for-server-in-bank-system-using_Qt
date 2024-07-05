@@ -21,7 +21,7 @@ QJsonObject AddUserHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-
+                qDebug()<<"Request from admin to AddUser"<<Qt::endl;
                 flag=true;
                 for(auto& vv:base->GetjsonVec())
                 {

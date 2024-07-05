@@ -19,6 +19,7 @@ QJsonObject TransferAmountHandler::Handling(QJsonObject json)
     QJsonObject news;
     if(json["Request"].toString()=="TransferAmount")
     {
+        qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Transfer Amount "<<Qt::endl;
         base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         //qDebug()<<"log request"<<Qt::endl;
         base->InitDatatBase();

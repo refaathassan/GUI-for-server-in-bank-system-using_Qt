@@ -1,7 +1,7 @@
 [
     {
         "accountnumber": "34323",
-        "balance": 65,
+        "balance": 85,
         "fullname": "ali hassan  ahmed",
         "password": "12345",
         "type": "user",
@@ -24,12 +24,14 @@
         "username": "refaathassan"
     },
     {
+        "accountnumber": null,
         "fullname": "refaat hassan",
         "password": "1289",
         "type": "admin",
         "username": "refatali"
     },
     {
+        "accountnumber": null,
         "fullname": "efas",
         "password": "43342",
         "type": "admin",

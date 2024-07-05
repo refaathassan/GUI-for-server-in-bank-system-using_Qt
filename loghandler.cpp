@@ -19,8 +19,13 @@ QJsonObject LogHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         for(auto& vv:base->GetjsonVec())
         {
+
             if((vv["username"].toString()==json["username"].toString())&&(vv["password"].toString()==json["password"].toString()))
             {
+                if(vv["type"].toString()=="admin")
+                    qDebug()<<"Request from  admin to log  "<<Qt::endl;
+                else
+                    qDebug()<<"Request from  "<<json["username"].toString()<<" to log  "<<Qt::endl;
                 flag=true;
                 //qDebug()<<"refaat is here"<<Qt::endl;
                 news["Request"]="Log";

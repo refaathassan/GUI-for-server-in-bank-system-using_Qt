@@ -13,11 +13,12 @@ QJsonObject ViewAccountBalanceHandler::Handling(QJsonObject json)
     QJsonObject news;
     if(json["Request"].toString()=="ViewAccountBalance")
     {
-        //qDebug()<<"log request"<<Qt::endl;
+
         base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
+            qDebug()<<"Request from admin to View Account Balance"<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 if(vv["username"].toString()==json["accountnumber"].toString())
@@ -36,6 +37,7 @@ QJsonObject ViewAccountBalanceHandler::Handling(QJsonObject json)
         }
         else
         {
+            qDebug()<<"Request from user  "<<CurrentAcountNumber<<" to View Account Balance"<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 if(vv["accountnumber"].toString()==CurrentAcountNumber)

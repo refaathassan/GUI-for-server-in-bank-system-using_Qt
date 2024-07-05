@@ -18,6 +18,7 @@ QJsonObject ViewDataBase::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
+            qDebug()<<"Request from admin to View Data Base"<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 jsonarr.append(vv);
