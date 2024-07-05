@@ -14,13 +14,14 @@ QJsonObject DeleteHandler::Handling(QJsonObject json)
     if(json["Request"].toString()=="DeleteUser")
     {
         //qDebug()<<"log request"<<Qt::endl;
+        base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
 
             for(auto& vv:base->GetjsonVec())
             {
-                if(vv["accountnumber"].toString()==json["accountnumber"].toString()&&json["accountnumber"].toString()!="")
+                if(vv["accountnumber"].toString()==json["accountnumber"].toString())
                 {
                     flag=true;
                     base->Delete(vv["accountnumber"].toString());

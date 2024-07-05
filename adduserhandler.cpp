@@ -11,41 +11,57 @@ AddUserHandler::AddUserHandler(QObject *parent)
 QJsonObject AddUserHandler::Handling(QJsonObject json)
 {
     bool flag=false;
-    bool isDigits=true;
-    bool isnull=true;
+    bool isvalid=false;
     QJsonObject news;
     QJsonObject user;
     if(json["Request"].toString()=="AddUser")
     {
         //qDebug()<<"log request"<<Qt::endl;
+        base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-            for (const QString &key : json.keys()) {
-                if (json.value(key)=="") {
-                    isnull=false;
-                }
-            }
-            if(isDigits==true&&isnull==true)
-            {
-                flag=true;
-                user["username"]=json["username"];
-                user["accountnumber"]=json["accountnumber"];
-                user["fullname"]=json["fullname"];
-                user["password"]=json["password"];
-                user["type"]=json["type"];
-                user["balance"]=0;
 
-                news["Request"]="AddUser";
-                news["Response"]="the user "+user["fullname"].toString()+" add";
-                base->Add(user);
-            }
-            else
-            {
                 flag=true;
-                news["Request"]="AddUser";
-                news["Response"]="the user is not add becuase error in data";
-            }
+                for(auto& vv:base->GetjsonVec())
+                {
+                    if(vv["username"].toString()==json["username"].toString())
+                    {
+                        flag=false;
+                    }
+                }
+                if(flag==true)
+                {
+                    user["username"]=json["username"];
+                    if(json["type"]=="user")
+                    {
+                        int randomNumber;
+                        QString str;
+                        do
+                        {
+                            isvalid=false;
+                            randomNumber = QRandomGenerator::global()->bounded(1, 1000000);
+                            str=QString::number(randomNumber);
+                            for(auto& vv:base->GetjsonVec())
+                            {
+                                 if(vv["accountnumber"].toString()==str)
+                                {
+                                    isvalid==true;
+                                }
+                            }
+                        }while(isvalid==true);
+                        user["accountnumber"]=str;
+                        user["balance"]=0;
+                    }
+                    user["fullname"]=json["fullname"];
+                    user["password"]=json["password"];
+                    user["type"]=json["type"];
+
+
+                    news["Request"]="AddUser";
+                    news["Response"]="the user "+user["fullname"].toString()+" add";
+                    base->Add(user);
+                }
         }
         else
         {
@@ -53,7 +69,7 @@ QJsonObject AddUserHandler::Handling(QJsonObject json)
         if(flag==false)
         {
             news["Request"]="DeleteUser";
-            news["Response"]="no account number like that";
+            news["Response"]="please choose other user name";
         }
         else
         {

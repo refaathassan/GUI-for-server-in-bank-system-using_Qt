@@ -6,6 +6,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QFile>
+#include <QCoreApplication>
 //#include <QDebug>
 #include <QVector>
 class DataBaseHandler : public QObject
@@ -19,6 +20,7 @@ public:
     void UpDate(QJsonObject jso);
     void InitDatatBase(void);
     QVector<QJsonObject> GetjsonVec(void);
+    void SetPath(QString path);
 private:
     QVector<QJsonObject> jsonVec;
     QString path;

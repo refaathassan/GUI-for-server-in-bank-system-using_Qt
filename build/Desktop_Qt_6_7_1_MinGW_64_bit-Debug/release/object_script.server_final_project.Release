@@ -11,6 +11,7 @@ release/serverhandler.o
 release/transferamounthandler.o
 release/viewaccountbalancehandler.o
 release/viewdatabase.o
+release/viewtransactionhistoryhandler.o
 release/moc_adduserhandler.o
 release/moc_databasehandler.o
 release/moc_deletehandler.o
@@ -23,3 +24,4 @@ release/moc_serverhandler.o
 release/moc_transferamounthandler.o
 release/moc_viewaccountbalancehandler.o
 release/moc_viewdatabase.o
+release/moc_viewtransactionhistoryhandler.o

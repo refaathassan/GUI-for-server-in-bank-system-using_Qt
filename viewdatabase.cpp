@@ -14,6 +14,7 @@ QJsonObject ViewDataBase::Handling(QJsonObject json)
     if(json["Request"].toString()=="ViewDataBase")
     {
         //qDebug()<<"log request"<<Qt::endl;
+        base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {

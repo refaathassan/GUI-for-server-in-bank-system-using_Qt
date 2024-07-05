@@ -15,6 +15,7 @@ QJsonObject LogHandler::Handling(QJsonObject json)
     if(json["Request"].toString()=="Log")
     {
         //qDebug()<<"log request"<<Qt::endl;
+        base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         for(auto& vv:base->GetjsonVec())
         {

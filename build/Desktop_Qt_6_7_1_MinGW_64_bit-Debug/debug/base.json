@@ -1,7 +1,7 @@
 [
     {
         "accountnumber": "34323",
-        "balance": 10,
+        "balance": 65,
         "fullname": "ali hassan  ahmed",
         "password": "12345",
         "type": "user",
@@ -9,7 +9,7 @@
     },
     {
         "accountnumber": "3432",
-        "balance": 60,
+        "balance": 200,
         "fullname": "ali hassan  ahmed",
         "password": "1245",
         "type": "user",
@@ -22,5 +22,25 @@
         "password": "1234",
         "type": "admin",
         "username": "refaathassan"
+    },
+    {
+        "fullname": "refaat hassan",
+        "password": "1289",
+        "type": "admin",
+        "username": "refatali"
+    },
+    {
+        "fullname": "efas",
+        "password": "43342",
+        "type": "admin",
+        "username": "refaatali"
+    },
+    {
+        "accountnumber": "543139",
+        "balance": 0,
+        "fullname": "sdf dfas",
+        "password": "412w34",
+        "type": "user",
+        "username": "mohameded"
     }
 ]

@@ -12,6 +12,7 @@ ServerHandler::ServerHandler(qint32 ID, QObject *parent): QThread{parent},ID{ID}
     PRU6=new AddUserHandler();
     PRU7=new MakeTransactionHandler();
     PRU8=new TransferAmountHandler();
+    PRU9=new ViewTransactionHistoryHandler();
     PRU1->SetNextHandler(PRU2);
     PRU2->SetNextHandler(PRU3);
     PRU3->SetNextHandler(PRU4);
@@ -19,6 +20,7 @@ ServerHandler::ServerHandler(qint32 ID, QObject *parent): QThread{parent},ID{ID}
     PRU5->SetNextHandler(PRU6);
     PRU6->SetNextHandler(PRU7);
     PRU7->SetNextHandler(PRU8);
+    PRU8->SetNextHandler(PRU9);
     //connect(PRU1,&Handler::SendToSocket,this,&ServerHandler::SendMassage);
 }
 

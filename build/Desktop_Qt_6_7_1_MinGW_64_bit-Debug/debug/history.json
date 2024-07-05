@@ -1,0 +1,92 @@
+[
+    {
+        "accountnumber": "34323",
+        "transactions": [
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:46:12",
+                "descraption": "send to 3432"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:45:59",
+                "descraption": "send to 3432"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:45:59",
+                "descraption": "send to 3432"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:45:50",
+                "descraption": "send to 3432"
+            },
+            {
+                "amount": 15,
+                "date": "2024-07-04 19:38:15",
+                "descraption": "deposit"
+            },
+            {
+                "amount": 30,
+                "date": "2024-07-04 19:33:14",
+                "descraption": "deposit"
+            },
+            {
+                "amount": -10,
+                "date": "2024-07-04 18:33:23",
+                "descraption": "withdraw"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 18:33:19",
+                "descraption": "deposit"
+            }
+        ]
+    },
+    {
+        "accountnumber": "3432",
+        "transactions": [
+            {
+                "amount": -40,
+                "date": "2024-07-04 19:51:14",
+                "descraption": "withdraw"
+            },
+            {
+                "amount": 30,
+                "date": "2024-07-04 19:50:48",
+                "descraption": "deposit"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:50:45",
+                "descraption": "deposit"
+            },
+            {
+                "amount": 20,
+                "date": "2024-07-04 19:50:41",
+                "descraption": "deposit"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:46:12",
+                "descraption": "recieved from 34323"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:45:59",
+                "descraption": "recieved from 34323"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:45:59",
+                "descraption": "recieved from 34323"
+            },
+            {
+                "amount": 10,
+                "date": "2024-07-04 19:45:50",
+                "descraption": "recieved from 34323"
+            }
+        ]
+    }
+]

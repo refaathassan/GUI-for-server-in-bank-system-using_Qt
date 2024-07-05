@@ -4,7 +4,9 @@
 #include <QObject>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QCoreApplication>
 #include "databasehandler.h"
+#include <QRandomGenerator>
 class Handler : public QObject
 {
     Q_OBJECT

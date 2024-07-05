@@ -1,11 +1,15 @@
 #include "databasehandler.h"
-#include <QCoreApplication>
+
 DataBaseHandler::DataBaseHandler(QObject *parent)
-    : QObject{parent},path{QCoreApplication::applicationDirPath()+"\\base.json"}
+    : QObject{parent}
 {
+    path= QCoreApplication::applicationDirPath()+"\\base.json";
   InitDatatBase();
 }
-
+void DataBaseHandler::SetPath(QString path)
+{
+    this->path=path;
+}
 void DataBaseHandler::Add(QJsonObject jsons)
 {
     InitDatatBase();

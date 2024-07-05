@@ -11,6 +11,7 @@ debug/serverhandler.o
 debug/transferamounthandler.o
 debug/viewaccountbalancehandler.o
 debug/viewdatabase.o
+debug/viewtransactionhistoryhandler.o
 debug/moc_adduserhandler.o
 debug/moc_databasehandler.o
 debug/moc_deletehandler.o
@@ -23,3 +24,4 @@ debug/moc_serverhandler.o
 debug/moc_transferamounthandler.o
 debug/moc_viewaccountbalancehandler.o
 debug/moc_viewdatabase.o
+debug/moc_viewtransactionhistoryhandler.o

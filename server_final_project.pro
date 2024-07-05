@@ -19,7 +19,8 @@ SOURCES += \
         serverhandler.cpp \
         transferamounthandler.cpp \
         viewaccountbalancehandler.cpp \
-        viewdatabase.cpp
+        viewdatabase.cpp \
+        viewtransactionhistoryhandler.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -38,4 +39,5 @@ HEADERS += \
     serverhandler.h \
     transferamounthandler.h \
     viewaccountbalancehandler.h \
-    viewdatabase.h
+    viewdatabase.h \
+    viewtransactionhistoryhandler.h

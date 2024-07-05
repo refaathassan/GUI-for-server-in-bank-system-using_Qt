@@ -15,6 +15,7 @@
 #include "adduserhandler.h"
 #include "maketransactionhandler.h"
 #include "transferamounthandler.h"
+#include "viewtransactionhistoryhandler.h"
 class ServerHandler : public QThread
 {
     Q_OBJECT
@@ -37,6 +38,7 @@ private:
     Handler *PRU6;
     Handler *PRU7;
     Handler *PRU8;
+    Handler *PRU9;
     // QThread interface
 protected:
     void run();
