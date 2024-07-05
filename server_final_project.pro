@@ -18,6 +18,7 @@ SOURCES += \
         server.cpp \
         serverhandler.cpp \
         transferamounthandler.cpp \
+        updateuserhandler.cpp \
         viewaccountbalancehandler.cpp \
         viewdatabase.cpp \
         viewtransactionhistoryhandler.cpp
@@ -38,6 +39,7 @@ HEADERS += \
     server.h \
     serverhandler.h \
     transferamounthandler.h \
+    updateuserhandler.h \
     viewaccountbalancehandler.h \
     viewdatabase.h \
     viewtransactionhistoryhandler.h

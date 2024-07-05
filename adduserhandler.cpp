@@ -21,54 +21,54 @@ QJsonObject AddUserHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-                qDebug()<<"Request from admin to AddUser"<<Qt::endl;
-                flag=true;
-                for(auto& vv:base->GetjsonVec())
+            qDebug()<<"Request from admin to AddUser"<<Qt::endl;
+            flag=true;
+            for(auto& vv:base->GetjsonVec())
+            {
+                if(vv["username"].toString()==json["username"].toString())
                 {
-                    if(vv["username"].toString()==json["username"].toString())
-                    {
-                        flag=false;
-                    }
+                    flag=false;
                 }
-                if(flag==true)
+            }
+            if(flag==true)
+            {
+                user["username"]=json["username"];
+                if(json["type"]=="user")
                 {
-                    user["username"]=json["username"];
-                    if(json["type"]=="user")
+                    int randomNumber;
+                    QString str;
+                    do
                     {
-                        int randomNumber;
-                        QString str;
-                        do
+                        isvalid=false;
+                        randomNumber = QRandomGenerator::global()->bounded(1, 1000000);
+                        str=QString::number(randomNumber);
+                        for(auto& vv:base->GetjsonVec())
                         {
-                            isvalid=false;
-                            randomNumber = QRandomGenerator::global()->bounded(1, 1000000);
-                            str=QString::number(randomNumber);
-                            for(auto& vv:base->GetjsonVec())
+                            if(vv["accountnumber"].toString()==str)
                             {
-                                 if(vv["accountnumber"].toString()==str)
-                                {
-                                    isvalid==true;
-                                }
+                                isvalid==true;
                             }
-                        }while(isvalid==true);
-                        user["accountnumber"]=str;
-                        user["balance"]=0;
-                    }
-                    user["fullname"]=json["fullname"];
-                    user["password"]=json["password"];
-                    user["type"]=json["type"];
-
-
-                    news["Request"]="AddUser";
-                    news["Response"]="the user "+user["fullname"].toString()+" add";
-                    base->Add(user);
+                        }
+                    }while(isvalid==true);
+                    user["accountnumber"]=str;
+                    user["balance"]=0;
                 }
+                user["fullname"]=json["fullname"];
+                user["password"]=json["password"];
+                user["type"]=json["type"];
+
+
+                news["Request"]="AddUser";
+                news["Response"]="the user "+user["fullname"].toString()+" add";
+                base->Add(user);
+            }
         }
         else
         {
         }
         if(flag==false)
         {
-            news["Request"]="DeleteUser";
+            news["Request"]="AddUser";
             news["Response"]="please choose other user name";
         }
         else

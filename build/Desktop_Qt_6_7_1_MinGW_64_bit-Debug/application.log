@@ -4,3 +4,145 @@
 
  [2024-07-05T04:29:06]  Request from user   "34323"  to Make Transaction  
 
+ [2024-07-05T17:27:26]  Request from  admin to log   
+
+ [2024-07-05T17:38:01]  Request from  admin to log   
+
+ [2024-07-05T17:38:28]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:40:19]  Request from  admin to log   
+
+ [2024-07-05T17:40:19]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T17:40:32]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:40:32]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"please choose other user name\"}" 
+
+ [2024-07-05T17:42:04]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:42:04]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"please choose other user name\"}" 
+
+ [2024-07-05T17:46:30]  Request from  admin to log   
+
+ [2024-07-05T17:46:30]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T17:46:45]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:46:45]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"please choose other user name\"}" 
+
+ [2024-07-05T17:47:00]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:47:00]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user  Updated\"}" 
+
+ [2024-07-05T17:49:27]  Request from  admin to log   
+
+ [2024-07-05T17:49:27]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T17:49:40]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:49:40]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"please choose other user name\"}" 
+
+ [2024-07-05T17:49:48]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:49:48]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user  Updated\"}" 
+
+ [2024-07-05T17:50:44]  Request from admin to UpdateUser 
+
+ [2024-07-05T17:50:44]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"please choose other user name\"}" 
+
+ [2024-07-05T18:02:13]  on ready send "{\"Request\":\"Log\",\"Response\":\"0\"}" 
+
+ [2024-07-05T18:02:19]  on ready send "{\"Request\":\"Log\",\"Response\":\"0\"}" 
+
+ [2024-07-05T18:02:24]  on ready send "{\"Request\":\"Log\",\"Response\":\"0\"}" 
+
+ [2024-07-05T18:02:54]  on ready send "{\"Request\":\"Log\",\"Response\":\"0\"}" 
+
+ [2024-07-05T18:03:09]  on ready send "{\"Request\":\"Log\",\"Response\":\"0\"}" 
+
+ [2024-07-05T18:03:19]  Request from  admin to log   
+
+ [2024-07-05T18:03:19]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T18:03:30]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:03:30]  on ready send "{}" 
+
+ [2024-07-05T18:03:32]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:03:32]  on ready send "{}" 
+
+ [2024-07-05T18:08:10]  on ready send "{\"Request\":\"Log\",\"Response\":\"0\"}" 
+
+ [2024-07-05T18:08:15]  Request from  admin to log   
+
+ [2024-07-05T18:08:15]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T18:08:26]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:08:26]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user not updated\"}" 
+
+ [2024-07-05T18:08:29]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:08:29]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user sdf dfas Updated\"}" 
+
+ [2024-07-05T18:08:57]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:08:58]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user sdf dfas Updated\"}" 
+
+ [2024-07-05T18:09:10]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:09:10]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user sdf dfas Updated\"}" 
+
+ [2024-07-05T18:09:27]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:09:27]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user not updated\"}" 
+
+ [2024-07-05T18:09:37]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:09:37]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user not updated\"}" 
+
+ [2024-07-05T18:10:10]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:10:10]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:10:43]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:10:43]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:16:51]  Request from  admin to log   
+
+ [2024-07-05T18:16:51]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T18:17:04]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:17:04]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:17:09]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:17:09]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:19:35]  Request from  admin to log   
+
+ [2024-07-05T18:19:35]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T18:22:37]  Request from  admin to log   
+
+ [2024-07-05T18:22:37]  on ready send "{\"Request\":\"Log\",\"Response\":\"1\",\"type\":\"admin\"}" 
+
+ [2024-07-05T18:23:00]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:23:00]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:23:13]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:23:13]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:23:27]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:23:27]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user   Updated\"}" 
+
+ [2024-07-05T18:23:53]  Request from admin to UpdateUser 
+
+ [2024-07-05T18:23:53]  on ready send "{\"Request\":\"UpdateUser\",\"Response\":\"the user not updated\"}" 
+

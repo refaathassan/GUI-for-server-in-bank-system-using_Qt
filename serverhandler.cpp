@@ -13,6 +13,7 @@ ServerHandler::ServerHandler(qint32 ID, QObject *parent): QThread{parent},ID{ID}
     PRU7=new MakeTransactionHandler();
     PRU8=new TransferAmountHandler();
     PRU9=new ViewTransactionHistoryHandler();
+    PRU9=new UpdateUserHandler();
     PRU1->SetNextHandler(PRU2);
     PRU2->SetNextHandler(PRU3);
     PRU3->SetNextHandler(PRU4);
@@ -21,6 +22,7 @@ ServerHandler::ServerHandler(qint32 ID, QObject *parent): QThread{parent},ID{ID}
     PRU6->SetNextHandler(PRU7);
     PRU7->SetNextHandler(PRU8);
     PRU8->SetNextHandler(PRU9);
+    PRU9->SetNextHandler(PRU10);
     //connect(PRU1,&Handler::SendToSocket,this,&ServerHandler::SendMassage);
 }
 
@@ -68,7 +70,7 @@ void ServerHandler::SendMassage(QJsonObject json)
         QByteArray byte=QJsonDocument(json).toJson(QJsonDocument::Compact);
         // QString str=QString("JsonSize:%1/").arg(byte.size());
         // byte.prepend(str.toUtf8());
-        //qDebug()<<"on ready send"<<byte<<Qt::endl;
+        qDebug()<<"on ready send"<<byte<<Qt::endl;
         soc->write(byte);
     }
 }

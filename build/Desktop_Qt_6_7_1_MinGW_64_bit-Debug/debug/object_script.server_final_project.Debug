@@ -9,6 +9,7 @@ debug/maketransactionhandler.o
 debug/server.o
 debug/serverhandler.o
 debug/transferamounthandler.o
+debug/updateuserhandler.o
 debug/viewaccountbalancehandler.o
 debug/viewdatabase.o
 debug/viewtransactionhistoryhandler.o
@@ -22,6 +23,7 @@ debug/moc_maketransactionhandler.o
 debug/moc_server.o
 debug/moc_serverhandler.o
 debug/moc_transferamounthandler.o
+debug/moc_updateuserhandler.o
 debug/moc_viewaccountbalancehandler.o
 debug/moc_viewdatabase.o
 debug/moc_viewtransactionhistoryhandler.o

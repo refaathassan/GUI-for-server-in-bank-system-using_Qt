@@ -18,31 +18,17 @@
     {
         "accountnumber": null,
         "balance": null,
-        "fullname": " ahmed mohamed ali",
+        "fullname": "sdf dfas",
         "password": "1234",
         "type": "admin",
         "username": "refaathassan"
     },
     {
-        "accountnumber": null,
-        "fullname": "refaat hassan",
-        "password": "1289",
-        "type": "admin",
-        "username": "refatali"
-    },
-    {
-        "accountnumber": null,
-        "fullname": "efas",
-        "password": "43342",
-        "type": "admin",
-        "username": "refaatali"
-    },
-    {
         "accountnumber": "543139",
-        "balance": 0,
-        "fullname": "sdf dfas",
-        "password": "412w34",
+        "balance": 12,
+        "fullname": " ",
+        "password": "eeeeeee",
         "type": "user",
-        "username": "mohameded"
+        "username": "mohamednew"
     }
 ]
