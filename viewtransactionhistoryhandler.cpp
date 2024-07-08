@@ -90,7 +90,7 @@ QJsonObject ViewTransactionHistoryHandler::Handling(QJsonObject json)
         if(flag==false)
         {
             news["Request"]="ViewTransactionHistory";
-            news["Response"]="no account number like that";
+            news["Response"]="no transection history";
         }
         else
         {

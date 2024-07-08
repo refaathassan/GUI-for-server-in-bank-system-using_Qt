@@ -21,7 +21,7 @@ QJsonObject ViewAccountBalanceHandler::Handling(QJsonObject json)
             qDebug()<<"Request from admin to View Account Balance"<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
-                if(vv["username"].toString()==json["accountnumber"].toString())
+                if(vv["accountnumber"].toString()==json["accountnumber"].toString())
                 {
                     flag=true;
                     //qDebug()<<"refaat is here"<<Qt::endl;

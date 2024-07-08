@@ -7,6 +7,16 @@
 //#include <QDebug>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QCryptographicHash>
+#include <QByteArray>
+#include <QCryptographicHash>
+#include <QByteArray>
+#include <QFile>
+#include <openssl/pem.h>
+#include <openssl/rsa.h>
+#include <openssl/sha.h>
+#include "qaesencryption.h"
+
 #include "loghandler.h"
 #include "getaccounhandler.h"
 #include "viewaccountbalancehandler.h"
@@ -27,6 +37,10 @@ public:
     void OnReadyRead(void);
     void SendMassage(QJsonObject json);
     void Operation(QJsonObject json);
+
+    QByteArray decryptAndVerify(const QByteArray &encryptedData, const QByteArray &key, const QByteArray &iv, const QByteArray &rsaPublicKeyFile);
+    bool verifySignature(const QByteArray &data, const QByteArray &signature, const QByteArray &rsaPublicKeyFile);
+
 signals:
 private:
     qint32 ID;
@@ -42,6 +56,9 @@ private:
     Handler *PRU8;
     Handler *PRU9;
     Handler *PRU10;
+    QByteArray key;
+    QByteArray iv;
+    QString publick;
     // QThread interface
 protected:
     void run();
