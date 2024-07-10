@@ -18,7 +18,7 @@ QJsonObject ViewAccountBalanceHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-            qDebug()<<"Request from admin to View Account Balance"<<Qt::endl;
+            qDebug()<<"Request from admin to View Account Balance  "<<json["accountnumber"].toString()<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 if(vv["accountnumber"].toString()==json["accountnumber"].toString())
@@ -37,7 +37,7 @@ QJsonObject ViewAccountBalanceHandler::Handling(QJsonObject json)
         }
         else
         {
-            qDebug()<<"Request from user  "<<CurrentAcountNumber<<" to View Account Balance"<<Qt::endl;
+            qDebug()<<"Request from user  "<<CurrentAcountNumber<<" to View Account Balance "<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 if(vv["accountnumber"].toString()==CurrentAcountNumber)

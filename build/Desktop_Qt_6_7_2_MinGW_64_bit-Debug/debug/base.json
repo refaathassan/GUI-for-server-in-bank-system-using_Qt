@@ -1,11 +1,11 @@
 [
     {
         "accountnumber": "34323",
-        "balance": 5,
-        "fullname": "ali hassan  ahmed",
+        "balance": 340,
+        "fullname": "mohamedhassan",
         "password": "12345",
         "type": "user",
-        "username": "mohamed"
+        "username": "mohameds"
     },
     {
         "accountnumber": null,
@@ -32,11 +32,29 @@
         "username": "refo"
     },
     {
-        "accountnumber": "953939",
+        "accountnumber": "466723",
         "balance": 0,
-        "fullname": "sdf fsa",
-        "password": "21",
+        "fullname": "news",
+        "password": "pass",
         "type": "user",
-        "username": "saf"
+        "username": "refaatnews"
+    },
+    {
+        "accountnumber": "178740",
+        "balance": 20,
+        "email": "refaathassanv@gmail.com",
+        "fullname": "refaatemail",
+        "password": "1010",
+        "type": "user",
+        "username": "refaatemail"
+    },
+    {
+        "accountnumber": "936037",
+        "balance": 10,
+        "email": "refaathassanm@gmail.com",
+        "fullname": "keroemail",
+        "password": "1010",
+        "type": "user",
+        "username": "keroemail"
     }
 ]

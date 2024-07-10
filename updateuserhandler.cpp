@@ -18,7 +18,7 @@ QJsonObject UpdateUserHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-            qDebug()<<"Request from admin to UpdateUser"<<Qt::endl;
+            qDebug()<<"Request from admin to UpdateUser "<<json["accountnumber"].toString()<<Qt::endl;
             flag=true;
             for(auto& vv:base->GetjsonVec())
             {
@@ -43,6 +43,8 @@ QJsonObject UpdateUserHandler::Handling(QJsonObject json)
 
                             if(json["password"].toString()!="")
                                 vv["password"]=json["password"];
+                            if(json["email"].toString()!="")
+                                vv["email"]=json["email"];
 
                             vv["type"]=json["type"];
 

@@ -19,7 +19,7 @@ QJsonObject TransferAmountHandler::Handling(QJsonObject json)
     QJsonObject news;
     if(json["Request"].toString()=="TransferAmount")
     {
-        qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Transfer Amount "<<Qt::endl;
+        qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Transfer Amount "<<json["amount"].toInt()<<" to "<<json["accountnumber"].toString()<<Qt::endl;
         base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         //qDebug()<<"log request"<<Qt::endl;
         base->InitDatatBase();
@@ -40,6 +40,13 @@ QJsonObject TransferAmountHandler::Handling(QJsonObject json)
                                 flag=true;
                                 ss["balance"]=ss["balance"].toInt()-json["amount"].toInt();
                                 rr["balance"]=rr["balance"].toInt()+json["amount"].toInt();
+                                sendEmail(ss["email"].toString(),"bank notification",
+                                          "you transfred amount of "+QString::number(json["amount"].toInt())+" $ to "
+                                          +rr["accountnumber"].toString());
+                                sendEmail(rr["email"].toString(),"bank notification",
+                                          "you received   "+QString::number(json["amount"].toInt())+" $ from "
+                                              +ss["accountnumber"].toString());
+
                                 base->UpDate(ss);
                                 base->UpDate(rr);
                                 news["Request"]="TransferAmount";

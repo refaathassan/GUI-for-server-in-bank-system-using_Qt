@@ -18,7 +18,7 @@ QJsonObject GetAccounHandler::Handling(QJsonObject json)
             base->InitDatatBase();
             if(Handler::CurrentType=="admin")
             {
-                qDebug()<<"Request from admin to Get Account Number"<<Qt::endl;
+                qDebug()<<"Request from admin to Get Account Number to user name  "<<json["username"].toString()<<Qt::endl;
                 for(auto& vv:base->GetjsonVec())
                 {
                     if(vv["username"].toString()==json["username"].toString())

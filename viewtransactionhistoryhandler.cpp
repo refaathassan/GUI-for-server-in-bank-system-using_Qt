@@ -18,7 +18,7 @@ QJsonObject ViewTransactionHistoryHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-            qDebug()<<"Request from admin to View Transaction History"<<Qt::endl;
+            qDebug()<<"Request from admin to View Transaction History to "<<json["accountnumber"].toString()<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
 
@@ -27,7 +27,7 @@ QJsonObject ViewTransactionHistoryHandler::Handling(QJsonObject json)
                     flag=true;
                     QJsonArray arr=vv["transactions"].toArray();
                     QJsonArray arr1;
-                    if(arr.size()<=json["count"].toInt())
+                    if((arr.size()<=json["count"].toInt())||(json["count"].toInt()==0))
                     {
                         arr1=arr;
 
@@ -63,7 +63,7 @@ QJsonObject ViewTransactionHistoryHandler::Handling(QJsonObject json)
                     flag=true;
                     QJsonArray arr=vv["transactions"].toArray();
                     QJsonArray arr1;
-                    if(arr.size()<=json["count"].toInt())
+                    if((arr.size()<=json["count"].toInt())||(json["count"].toInt()==0))
                     {
                         arr1=arr;
 

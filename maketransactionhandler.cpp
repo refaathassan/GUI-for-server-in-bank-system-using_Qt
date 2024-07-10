@@ -15,7 +15,7 @@ QJsonObject MakeTransactionHandler::Handling(QJsonObject json)
     QJsonObject tran_obj;
     if(json["Request"].toString()=="MakeTransaction")
     {
-        qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Make Transaction "<<Qt::endl;
+        qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Make Transaction amount "<<json["amount"].toInt()<<Qt::endl;
         base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
         base->InitDatatBase();
         if(Handler::CurrentType=="user")
@@ -30,6 +30,13 @@ QJsonObject MakeTransactionHandler::Handling(QJsonObject json)
                     {
                         flag=true;
                         vv["balance"]=vv["balance"].toInt()+json["amount"].toInt();
+                        QString str;
+                        if(json["amount"].toInt()>0)
+                            str="deposite";
+                        else
+                            str="withdraw";
+                        sendEmail(vv["email"].toString(),"bank notification",
+                                  "you made "+str+" by "+QString::number(json["amount"].toInt())+" $");
                         base->UpDate(vv);
                         news["Request"]="MakeTransaction";
                         news["Response"]="the user "+vv["fullname"].toString()+"  your balance updated";

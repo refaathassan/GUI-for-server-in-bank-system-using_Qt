@@ -18,7 +18,7 @@ QJsonObject DeleteHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-            qDebug()<<"Request from admin to Delete User"<<Qt::endl;
+            qDebug()<<"Request from admin to Delete User "<<json["accountnumber"].toString()<<Qt::endl;
             for(auto& vv:base->GetjsonVec())
             {
                 if(vv["accountnumber"].toString()==json["accountnumber"].toString())
@@ -27,6 +27,22 @@ QJsonObject DeleteHandler::Handling(QJsonObject json)
                     base->Delete(vv["accountnumber"].toString());
                     news["Request"]="DeleteUser";
                     news["Response"]="the user "+vv["fullname"].toString()+"  deleted";
+
+                }
+                else
+                {
+
+                }
+            }
+            base->SetPath(QCoreApplication::applicationDirPath()+"\\history.json");
+            base->InitDatatBase();
+            for(auto& vv:base->GetjsonVec())
+            {
+                if(vv["accountnumber"].toString()==json["accountnumber"].toString())
+                {
+                    base->Delete(vv["accountnumber"].toString());
+                   // news["Request"]="DeleteUser";
+                   // news["Response"]="the user "+vv["fullname"].toString()+"  deleted";
 
                 }
                 else

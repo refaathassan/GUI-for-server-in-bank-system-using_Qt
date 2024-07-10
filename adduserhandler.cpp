@@ -21,7 +21,7 @@ QJsonObject AddUserHandler::Handling(QJsonObject json)
         base->InitDatatBase();
         if(Handler::CurrentType=="admin")
         {
-            qDebug()<<"Request from admin to AddUser"<<Qt::endl;
+            qDebug()<<"Request from admin to AddUser  "<<json["username"].toString()<<Qt::endl;
             flag=true;
             for(auto& vv:base->GetjsonVec())
             {
@@ -51,6 +51,7 @@ QJsonObject AddUserHandler::Handling(QJsonObject json)
                         }
                     }while(isvalid==true);
                     user["accountnumber"]=str;
+                    user["email"]=json["email"].toString();
                     user["balance"]=0;
                 }
                 user["fullname"]=json["fullname"];

@@ -44,7 +44,7 @@ void ServerHandler::OnReadyRead()
 
     QByteArray B_arrary=soc->readAll();
     QByteArray dec_B_arrary=decryptAndVerify(B_arrary,key,iv,publick.toUtf8());
-    qDebug()<<"on ready read"<<dec_B_arrary<<"    "<<B_arrary<<Qt::endl;
+    //qDebug()<<"on ready read"<<dec_B_arrary<<"    "<<B_arrary<<Qt::endl;
     //QString str=QString(B_arrary);
     QJsonDocument json=QJsonDocument::fromJson(dec_B_arrary);
     QJsonObject jsonObj=json.object();
@@ -173,3 +173,4 @@ bool ServerHandler::verifySignature(const QByteArray &data, const QByteArray &si
 
     return (result == 1);
 }
+
