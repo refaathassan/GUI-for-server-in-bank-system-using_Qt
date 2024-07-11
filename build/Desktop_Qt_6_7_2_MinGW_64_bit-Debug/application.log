@@ -18,3 +18,45 @@
 
  [2024-07-10T19:26:07]  Request from user   "178740"  to Transfer Amount  10  to  "936037" 
 
+ [2024-07-11T14:54:07]  log request 
+
+ [2024-07-11T14:55:22]  log request 
+
+ [2024-07-11T14:55:28]  Request from admin to View Data Base 
+
+ [2024-07-11T14:55:57]  Request from admin to Get Account Number to user name   "keroemai" 
+
+ [2024-07-11T14:56:02]  Request from admin to Get Account Number to user name   "keroemail" 
+
+ [2024-07-11T14:56:20]  Request from admin to View Account Balance   "936037" 
+
+ [2024-07-11T15:03:47]  Request from admin to View Transaction History to  "936037" 
+
+ [2024-07-11T15:04:26]  Request from admin to View Transaction History to  "34323" 
+
+ [2024-07-11T15:06:00]  Request from admin to View Transaction History to  "34323" 
+
+ [2024-07-11T15:06:11]  Request from admin to Delete User  "34323" 
+
+ [2024-07-11T15:07:11]  Request from admin to AddUser   "mohamed" 
+
+ [2024-07-11T15:08:13]  Request from admin to AddUser   "sdagsdds" 
+
+ [2024-07-11T15:58:57]  Request from admin to UpdateUser  "232" 
+
+ [2024-07-11T16:00:55]  Request from admin to UpdateUser  "543139" 
+
+ [2024-07-11T16:01:24]  Request from admin to UpdateUser  "543139" 
+
+ [2024-07-11T16:02:01]  Request from admin to UpdateUser  "543139" 
+
+ [2024-07-11T16:02:13]  Request from admin to UpdateUser  "543139" 
+
+ [2024-07-11T16:19:50]  log request 
+
+ [2024-07-11T16:21:01]  Request from admin to UpdateUser  "543139" 
+
+ [2024-07-11T16:21:41]  Request from admin to AddUser   "sertrg" 
+
+ [2024-07-11T16:22:50]  log request 
+

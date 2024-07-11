@@ -1,27 +1,20 @@
 [
     {
-        "accountnumber": "34323",
-        "balance": 340,
-        "fullname": "mohamedhassan",
-        "password": "12345",
-        "type": "user",
-        "username": "mohameds"
-    },
-    {
         "accountnumber": null,
         "balance": null,
         "fullname": "sdf dfas",
-        "password": "1234",
+        "password": "123467",
         "type": "admin",
         "username": "refaathassan"
     },
     {
         "accountnumber": "543139",
-        "balance": 12,
-        "fullname": " ",
-        "password": "eeeeeee",
+        "balance": 45,
+        "email": "das@sda.com",
+        "fullname": "dfsfdffdsf",
+        "password": "324325",
         "type": "user",
-        "username": "mohamednew"
+        "username": "refaathass"
     },
     {
         "accountnumber": "253727",
@@ -56,5 +49,32 @@
         "password": "1010",
         "type": "user",
         "username": "keroemail"
+    },
+    {
+        "accountnumber": "157055",
+        "balance": 100,
+        "email": "refat@gmail.com",
+        "fullname": "mohamedhassan",
+        "password": "123456",
+        "type": "user",
+        "username": "mohamed"
+    },
+    {
+        "accountnumber": "468093",
+        "balance": 0,
+        "email": "WDQ@EDFS.CL",
+        "fullname": "sdfsdfsd",
+        "password": "sdfsdfsdag",
+        "type": "user",
+        "username": "sdagsdds"
+    },
+    {
+        "accountnumber": "95167",
+        "balance": 0,
+        "email": "23dff@fwe.com",
+        "fullname": "retergraer",
+        "password": "regerer",
+        "type": "user",
+        "username": "sertrg"
     }
 ]

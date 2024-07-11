@@ -1,59 +1,5 @@
 [
     {
-        "accountnumber": "34323",
-        "transactions": [
-            {
-                "amount": 5,
-                "date": "2024-07-08 21:17:47",
-                "descraption": "send to 253727"
-            },
-            {
-                "amount": 20,
-                "date": "2024-07-08 21:17:25",
-                "descraption": "send to 253727"
-            },
-            {
-                "amount": -20,
-                "date": "2024-07-08 20:43:30",
-                "descraption": "withdraw"
-            },
-            {
-                "amount": -20,
-                "date": "2024-07-08 20:43:30",
-                "descraption": "withdraw"
-            },
-            {
-                "amount": -20,
-                "date": "2024-07-08 20:43:29",
-                "descraption": "withdraw"
-            },
-            {
-                "amount": -20,
-                "date": "2024-07-08 20:43:29",
-                "descraption": "withdraw"
-            },
-            {
-                "amount": -20,
-                "date": "2024-07-08 20:43:27",
-                "descraption": "withdraw"
-            },
-            {
-                "amount": 20,
-                "date": "2024-07-08 20:43:23",
-                "descraption": "deposit"
-            },
-            {
-                "amount": 20,
-                "date": "2024-07-08 20:43:15",
-                "descraption": "send to 3432"
-            },
-            {
-                "amount": -30,
-                "date": "2024-07-08 20:39:23"
-            }
-        ]
-    },
-    {
         "accountnumber": "253727",
         "transactions": [
             {
