@@ -1,76 +1,69 @@
+
 #include "loghandler.h"
 
 LogHandler::LogHandler(QObject *parent)
     : Handler{parent}
 {
-    pru=nullptr;
+    pru = nullptr;  // Initialize pointer to next handler
 }
 
 QJsonObject LogHandler::Handling(QJsonObject json)
 {
+    bool flag = false;  // Flag to indicate if login was successful
+    QJsonObject news;  // Response JSON object
 
-
-    bool flag=false;
-    QJsonObject news;
-    if(json["Request"].toString()=="Log")
+    if (json["Request"].toString() == "Log")
     {
-        qDebug()<<"log request"<<Qt::endl;
-        base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
-        base->InitDatatBase();
-        for(auto& vv:base->GetjsonVec())
-        {
+        qDebug() << "log request" << Qt::endl;
+        base->SetPath(QCoreApplication::applicationDirPath() + "\\base.json");  // Set database path
+        base->InitDatatBase();  // Initialize the database
 
-            if((vv["username"].toString()==json["username"].toString())&&(vv["password"].toString()==json["password"].toString()))
+        // Iterate through database to find matching username and password
+        for (auto& vv : base->GetjsonVec())
+        {
+            if ((vv["username"].toString() == json["username"].toString()) &&
+                (vv["password"].toString() == json["password"].toString()))
             {
-                // if(vv["type"].toString()=="admin")
-                //     qDebug()<<"Request from  admin to log  "<<Qt::endl;
-                // else
-                //     qDebug()<<"Request from  "<<json["username"].toString()<<" to log  "<<Qt::endl;
-                flag=true;
-                //qDebug()<<"refaat is here"<<Qt::endl;
-                news["Request"]="Log";
-                news["Response"]="1";
-                Handler::CurrentType=vv["type"].toString();
-                if(Handler::CurrentType=="admin")
+                flag = true;  // Username and password match found, set flag to true
+                news["Request"] = "Log";
+                news["Response"] = "1";  // Successful login response
+                Handler::CurrentType = vv["type"].toString();  // Set current user type
+
+                if (Handler::CurrentType == "admin")
                 {
-                    news["type"]="admin";
-                    Handler::CurrentAcountNumber="";
+                    news["type"] = "admin";
+                    Handler::CurrentAcountNumber = "";  // Clear current account number for admin
                 }
                 else
                 {
-                    news["type"]="user";
-                    Handler::CurrentAcountNumber=vv["accountnumber"].toString();
+                    news["type"] = "user";
+                    Handler::CurrentAcountNumber = vv["accountnumber"].toString();  // Set current account number for user
                 }
-
-            }
-            else
-            {
-
             }
         }
-        if(flag==false)
-        {
-            news["Request"]="Log";
-            news["Response"]="0";
-        }
-        else
-        {
 
+        if (flag == false)
+        {
+            news["Request"] = "Log";
+            news["Response"] = "0";  // Unsuccessful login response
         }
     }
     else
     {
-        if(pru!=nullptr)
+        // If the current handler cannot handle the request, pass it to the next handler
+        if (pru != nullptr)
         {
-           news= pru->Handling(json);
+            news = pru->Handling(json);
         }
-        else{}
     }
-    //qDebug()<<Handler::CurrentType<<"   "<<Handler::CurrentAcountNumber<<Qt::endl;
-    return news;
+
+    // Optionally print current user type and account number for debugging
+    // qDebug() << Handler::CurrentType << "   " << Handler::CurrentAcountNumber << Qt::endl;
+
+    return news;  // Return the response JSON object
 }
 
 void LogHandler::SetNextHandler(Handler *pru)
 {
-    this->pru=pru;
+    this->pru = pru;  // Set the next handler in the chain
 }

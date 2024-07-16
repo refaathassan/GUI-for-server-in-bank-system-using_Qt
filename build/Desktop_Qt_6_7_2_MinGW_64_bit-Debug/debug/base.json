@@ -34,26 +34,26 @@
     },
     {
         "accountnumber": "178740",
-        "balance": 20,
+        "balance": 30,
         "email": "refaathassanv@gmail.com",
         "fullname": "refaatemail",
-        "password": "1010",
+        "password": "101033",
         "type": "user",
         "username": "refaatemail"
     },
     {
         "accountnumber": "936037",
-        "balance": 10,
+        "balance": 60,
         "email": "refaathassanm@gmail.com",
         "fullname": "keroemail",
-        "password": "1010",
+        "password": "101055",
         "type": "user",
         "username": "keroemail"
     },
     {
-        "accountnumber": "157055",
-        "balance": 100,
-        "email": "refat@gmail.com",
+        "accountnumber": "123456",
+        "balance": 70,
+        "email": "refaathassanv@gmail.com",
         "fullname": "mohamedhassan",
         "password": "123456",
         "type": "user",

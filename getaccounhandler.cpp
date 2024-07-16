@@ -3,70 +3,64 @@
 GetAccounHandler::GetAccounHandler(QObject *parent)
     : Handler{parent}
 {
-    pru=nullptr;
+    pru = nullptr;  // Initialize pointer to next handler
 }
-
 
 QJsonObject GetAccounHandler::Handling(QJsonObject json)
 {
-    bool flag=false;
-    QJsonObject news;
-    if(json["Request"].toString()=="GetAccountNumber")
+    bool flag = false;  // Flag to indicate if account number was found
+    QJsonObject news;  // Response JSON object
+
+    if (json["Request"].toString() == "GetAccountNumber")
     {
-            //qDebug()<<"log request"<<Qt::endl;
-            base->SetPath(QCoreApplication::applicationDirPath()+"\\base.json");
-            base->InitDatatBase();
-            if(Handler::CurrentType=="admin")
+        base->SetPath(QCoreApplication::applicationDirPath() + "\\base.json");  // Set database path
+        base->InitDatatBase();  // Initialize the database
+
+        if (Handler::CurrentType == "admin")
+        {
+            qDebug() << "Request from admin to Get Account Number to username  " << json["username"].toString() << Qt::endl;
+
+            // Iterate through database to find matching username
+            for (auto& vv : base->GetjsonVec())
             {
-                qDebug()<<"Request from admin to Get Account Number to user name  "<<json["username"].toString()<<Qt::endl;
-                for(auto& vv:base->GetjsonVec())
+                if (vv["username"].toString() == json["username"].toString())
                 {
-                    if(vv["username"].toString()==json["username"].toString())
-                    {
-                        flag=true;
-                        //qDebug()<<"refaat is here"<<Qt::endl;
-                        news["Request"]="GetAccountNumber";
-                        news["Response"]=vv["accountnumber"];
-
-                    }
-                    else
-                    {
-
-                    }
+                    flag = true;  // Username found, set flag to true
+                    news["Request"] = "GetAccountNumber";
+                    news["Response"] = vv["accountnumber"];  // Return account number
                 }
             }
-            else
-            {
-                qDebug()<<"Request from user  "<<Handler::CurrentAcountNumber<<" to Get Account Number  "<<Qt::endl;
-                flag=true;
-                //qDebug()<<"refaat is here"<<Qt::endl;
-                news["Request"]="GetAccountNumber";
-                news["Response"]=Handler::CurrentAcountNumber;
+        }
+        else
+        {
+            qDebug() << "Request from user  " << Handler::CurrentAcountNumber << " to Get Account Number  " << Qt::endl;
+            flag = true;
+            news["Request"] = "GetAccountNumber";
+            news["Response"] = Handler::CurrentAcountNumber;  // Return current user's account number
+        }
 
-            }
-            if(flag==false)
-            {
-                news["Request"]="GetAccountNumber";
-                news["Response"]="no account number like that";
-            }
-            else
-            {
-
-            }
+        if (flag == false)
+        {
+            news["Request"] = "GetAccountNumber";
+            news["Response"] = "no account number like that";  // Handle case where no matching username/account number found
+        }
     }
     else
     {
-        if(pru!=nullptr)
+        // If the current handler cannot handle the request, pass it to the next handler
+        if (pru != nullptr)
         {
-            news= pru->Handling(json);
+            news = pru->Handling(json);
         }
-        else{}
     }
-    //qDebug()<<Handler::CurrentType<<"   "<<Handler::CurrentAcountNumber<<Qt::endl;
-    return news;
+
+    // Optionally print current user type and account number for debugging
+    // qDebug() << Handler::CurrentType << "   " << Handler::CurrentAcountNumber << Qt::endl;
+
+    return news;  // Return the response JSON object
 }
 
 void GetAccounHandler::SetNextHandler(Handler *pru)
 {
-    this->pru=pru;
+    this->pru = pru;  // Set the next handler in the chain
 }

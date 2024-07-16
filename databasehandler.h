@@ -9,22 +9,23 @@
 #include <QCoreApplication>
 //#include <QDebug>
 #include <QVector>
+
 class DataBaseHandler : public QObject
 {
-    Q_OBJECT
+    Q_OBJECT  // Macro required for Qt's meta-object system
 
 public:
-    explicit DataBaseHandler(QObject *parent = nullptr);
-    void Add(QJsonObject jsons);
-    void Delete(QString AccountNumber);
-    void UpDate(QJsonObject jso);
-    void InitDatatBase(void);
-    QVector<QJsonObject> GetjsonVec(void);
-    void SetPath(QString path);
+    explicit DataBaseHandler(QObject *parent = nullptr);  // Constructor declaration
+    void Add(QJsonObject jsons);  // Method declaration
+    void Delete(QString AccountNumber);  // Method declaration
+    void UpDate(QJsonObject jso);  // Method declaration
+    void InitDatatBase(void);  // Method declaration
+    QVector<QJsonObject> GetjsonVec(void);  // Method declaration
+    void SetPath(QString path);  // Method declaration
 private:
-    QVector<QJsonObject> jsonVec;
-    QString path;
-signals:
+    QVector<QJsonObject> jsonVec;  // Private member variable
+    QString path;  // Private member variable
+signals:  // Qt signal declarations
 };
 
 #endif // DATABASEHANDLER_H

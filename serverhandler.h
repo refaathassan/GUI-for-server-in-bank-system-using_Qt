@@ -1,3 +1,4 @@
+
 #ifndef SERVERHANDLER_H
 #define SERVERHANDLER_H
 
@@ -9,16 +10,13 @@
 #include <QJsonDocument>
 #include <QCryptographicHash>
 #include <QByteArray>
-#include <QCryptographicHash>
-#include <QByteArray>
-#include <QFile>
 #include <openssl/pem.h>
 #include <openssl/rsa.h>
 #include <openssl/sha.h>
 
+#include "qaesencryption.h"  // Include AES encryption class
 
-#include "qaesencryption.h"
-
+// Include all handler classes
 #include "loghandler.h"
 #include "getaccounhandler.h"
 #include "viewaccountbalancehandler.h"
@@ -32,22 +30,24 @@
 
 class ServerHandler : public QThread
 {
-    Q_OBJECT
+    Q_OBJECT  // Macro required for Qt's meta-object system
 public:
-    explicit ServerHandler(qint32 ID=0,QObject *parent = nullptr);
-    void OnDisconnect(void);
-    void OnReadyRead(void);
-    void SendMassage(QJsonObject json);
-    void Operation(QJsonObject json);
+    explicit ServerHandler(qint32 ID = 0, QObject *parent = nullptr);  // Constructor declaration
+    void OnDisconnect(void);  // Method declaration
+    void OnReadyRead(void);  // Method declaration
+    void SendMassage(QJsonObject json);  // Method declaration
+    void Operation(QJsonObject json);  // Method declaration
 
-    QByteArray decryptAndVerify(const QByteArray &encryptedData, const QByteArray &key, const QByteArray &iv, const QByteArray &rsaPublicKeyFile);
-    bool verifySignature(const QByteArray &data, const QByteArray &signature, const QByteArray &rsaPublicKeyFile);
+    QByteArray decryptAndVerify(const QByteArray &encryptedData, const QByteArray &key, const QByteArray &iv, const QByteArray &rsaPublicKeyFile);  // Method declaration
+    bool verifySignature(const QByteArray &data, const QByteArray &signature, const QByteArray &rsaPublicKeyFile);  // Method declaration
 
-signals:
+signals:  // Qt signal declarations
+
 private:
-    qint32 ID;
-    QTcpSocket * soc;
+    qint32 ID;  // Private member variable
+    QTcpSocket *soc;  // Private member variable
 
+    // Handler pointers
     Handler *PRU1;
     Handler *PRU2;
     Handler *PRU3;
@@ -58,12 +58,13 @@ private:
     Handler *PRU8;
     Handler *PRU9;
     Handler *PRU10;
-    QByteArray key;
-    QByteArray iv;
-    QString publick;
-    // QThread interface
+    bool flag;
+    QByteArray key;  // Private member variable
+    QByteArray iv;  // Private member variable
+    QString publick;  // Private member variable
+
 protected:
-    void run();
+    void run();  // Method declaration (from QThread)
 };
 
 #endif // SERVERHANDLER_H

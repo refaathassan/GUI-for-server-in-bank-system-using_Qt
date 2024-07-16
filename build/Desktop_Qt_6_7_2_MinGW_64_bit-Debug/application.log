@@ -60,3 +60,65 @@
 
  [2024-07-11T16:22:50]  log request 
 
+ [2024-07-14T01:57:23]  log request 
+
+ [2024-07-14T01:57:26]  Request from admin to View Data Base 
+
+ [2024-07-14T02:00:12]  log request 
+
+ [2024-07-14T02:00:18]  Request from user   "123456"  to Transfer Amount  30  to  "936037" 
+
+ [2024-07-14T15:20:26]  log request 
+
+ [2024-07-14T15:20:30]  Request from admin to View Data Base 
+
+ [2024-07-16T01:54:26]  Failed to load RSA public key
+ [2024-07-16T01:54:27]  Signature verification failed!
+ [2024-07-16T02:01:00]  ""
+ [2024-07-16T02:01:08]  Failed to load RSA public key
+ [2024-07-16T02:01:08]  Signature verification failed!
+ [2024-07-16T02:01:16]  Failed to load RSA public key
+ [2024-07-16T02:01:16]  Signature verification failed!
+ [2024-07-16T02:13:57]  "-----BEGIN PUBLIC KEY-----\r\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwJ1AMSfjkxjZcnrrHjmL\r\nVsa0lahLv0g8D3IkstUmSl+SGBDqgWb422fvax3bG9vWFmUItv08QEsUMZEsUecP\r\nMpypcCta/OWuPnl0o5rysl2JJoTP1d1yPJWCjuiQcTghMlQoh9OJKVRmoVhODZXq\r\niFZnjOeRz6uXvU78Zvmcp94mhkxet32OS5lriDXb6W25Qx9s3slhCIJGc99lvcsA\r\ntCdAymi7nPnXIY0+AzXvER13RPcCId+tO/GYKZPYnqgXEHUcdpM9QeQo7d03jLiM\r\noJjvJ5645aRw6S5LvaSC8CH58X0OQ4CqunHigQXPc/wbhiU/SQf/IlBsk3u6Rhwo\r\nCQIDAQAB\r\n-----END PUBLIC KEY-----\r\n"
+ [2024-07-16T02:14:10]  log request 
+
+ [2024-07-16T02:22:46]  Failed to load RSA public key
+ [2024-07-16T02:22:46]  Signature verification failed!
+ [2024-07-16T02:26:38]  log request 
+
+ [2024-07-16T02:34:22]  Signature verification failed!
+ [2024-07-16T02:34:24]  Signature verification failed!
+ [2024-07-16T02:36:17]  log request 
+
+ [2024-07-16T02:36:38]  Request from user   "936037"  to Transfer Amount  20  to  "178740" 
+
+ [2024-07-16T02:36:38]  QProcess: Destroyed while process ("E:\\QT_ENV\\server_final_project\\build\\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\\debug\\\\send_email.bat") is still running.
+ [2024-07-16T02:36:38]  QProcess: Destroyed while process ("E:\\QT_ENV\\server_final_project\\build\\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\\debug\\\\send_email.bat") is still running.
+ [2024-07-16T02:41:40]  log request 
+
+ [2024-07-16T02:42:07]  Request from user   "178740"  to Transfer Amount  30  to  "936037" 
+
+ [2024-07-16T02:42:07]  QObject: Cannot create children for a parent that is in a different thread.
+(Parent is QProcess(0x23cc40fd218), parent's thread is QThread(0x23cc40f2bb0), current thread is ServerHandler(0x23cc27570f0)
+ [2024-07-16T02:42:07]  QObject: Cannot create children for a parent that is in a different thread.
+(Parent is QProcess(0x23cc40fd218), parent's thread is QThread(0x23cc40f2bb0), current thread is ServerHandler(0x23cc27570f0)
+ [2024-07-16T02:42:07]  QObject: Cannot create children for a parent that is in a different thread.
+(Parent is QProcess(0x23cc40fd218), parent's thread is QThread(0x23cc40f2bb0), current thread is ServerHandler(0x23cc27570f0)
+ [2024-07-16T02:42:07]  QProcess::start: Process is already running
+ [2024-07-16T02:42:15]  QWinEventNotifier: Event notifiers cannot be enabled or disabled from another thread
+ [2024-07-16T02:58:11]  log request 
+
+ [2024-07-16T02:58:19]  Request from user   "178740"  to Transfer Amount  10  to  "936037" 
+
+ [2024-07-16T02:59:13]  Request from user   "178740"  to View Transaction History 
+
+ [2024-07-16T02:59:22]  Request from user   "178740"  to View Transaction History 
+
+ [2024-07-16T02:59:30]  Request from user   "178740"  to Get Account Number   
+
+ [2024-07-16T02:59:32]  Request from user   "178740"  to View Account Balance  
+
+ [2024-07-16T02:59:37]  Request from user   "178740"  to Make Transaction amount  30 
+
+ [2024-07-16T02:59:38]  Request from user   "178740"  to View Account Balance  
+
