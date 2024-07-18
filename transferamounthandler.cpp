@@ -46,99 +46,107 @@ QJsonObject TransferAmountHandler::Handling(QJsonObject json)
                         {
                             if (rr["accountnumber"].toString() == json["accountnumber"].toString())
                             {
-                                flag = true;  // Set flag indicating successful transfer
-
-                                // Update balances of sender and recipient
-                                ss["balance"] = ss["balance"].toInt() - json["amount"].toInt();
-                                rr["balance"] = rr["balance"].toInt() + json["amount"].toInt();
-
-                                // Send notification emails to sender and recipient
-                                sendEmail(ss["email"].toString(), "bank notification",
-                                          "you transfred amount of " + QString::number(json["amount"].toInt()) + " $ to "
-                                              + rr["accountnumber"].toString());
-                                sendEmail(rr["email"].toString(), "bank notification",
-                                          "you received   " + QString::number(json["amount"].toInt()) + " $ from "
-                                              + ss["accountnumber"].toString());
-
-                                // Update sender's and recipient's account information in the database
-                                base->UpDate(ss);
-                                base->UpDate(rr);
-
-                                // Prepare response JSON object
-                                news["Request"] = "TransferAmount";
-                                news["Response"] = " the operation successed ......... ";
-
-                                // Set path for the history database and initialize it
-                                base->SetPath(QCoreApplication::applicationDirPath() + "\\history.json");
-                                base->InitDatatBase();
-
-                                // Update sender's transaction history
-                                for (auto& sen : base->GetjsonVec())
+                                //the client can not transfer amount to his self
+                                if(json["accountnumber"].toString()!=CurrentAcountNumber)
                                 {
-                                    if (sen["accountnumber"].toString() == ss["accountnumber"].toString())
+                                    flag = true;  // Set flag indicating successful transfer
+
+                                    // Update balances of sender and recipient
+                                    ss["balance"] = ss["balance"].toInt() - json["amount"].toInt();
+                                    rr["balance"] = rr["balance"].toInt() + json["amount"].toInt();
+
+                                    // Send notification emails to sender and recipient
+                                    sendEmail(ss["email"].toString(), "bank notification",
+                                              "you transfred amount of " + QString::number(json["amount"].toInt()) + " $ to "
+                                                  + rr["accountnumber"].toString());
+                                    sendEmail(rr["email"].toString(), "bank notification",
+                                              "you received   " + QString::number(json["amount"].toInt()) + " $ from "
+                                                  + ss["accountnumber"].toString());
+
+                                    // Update sender's and recipient's account information in the database
+                                    base->UpDate(ss);
+                                    base->UpDate(rr);
+
+                                    // Prepare response JSON object
+                                    news["Request"] = "TransferAmount";
+                                    news["Response"] = " the operation successed ......... ";
+
+                                    // Set path for the history database and initialize it
+                                    base->SetPath(QCoreApplication::applicationDirPath() + "\\history.json");
+                                    base->InitDatatBase();
+
+                                    // Update sender's transaction history
+                                    for (auto& sen : base->GetjsonVec())
                                     {
-                                        tran_flag1 = true;
+                                        if (sen["accountnumber"].toString() == ss["accountnumber"].toString())
+                                        {
+                                            tran_flag1 = true;
+                                            QDateTime Date = QDateTime::currentDateTime();
+                                            QString TimeString = Date.toString("yyyy-MM-dd HH:mm:ss");
+                                            tran_obj1["date"] = TimeString;
+                                            tran_obj1["amount"] = json["amount"].toInt();
+                                            tran_obj1["descraption"] = "send to " + json["accountnumber"].toString();
+                                            QJsonArray arr = sen["transactions"].toArray();
+                                            arr.push_front(tran_obj1);
+                                            sen["transactions"] = arr;
+                                            base->UpDate(sen);
+                                        }
+                                    }
+
+                                    // If sender's transaction history was not updated, create new entry
+                                    if (tran_flag1 == false)
+                                    {
+                                        QJsonArray arr;
+                                        QJsonObject new_tran;
+                                        new_tran["accountnumber"] = CurrentAcountNumber;
                                         QDateTime Date = QDateTime::currentDateTime();
                                         QString TimeString = Date.toString("yyyy-MM-dd HH:mm:ss");
                                         tran_obj1["date"] = TimeString;
                                         tran_obj1["amount"] = json["amount"].toInt();
-                                        tran_obj1["descraption"] = "send to " + json["accountnumber"].toString();
-                                        QJsonArray arr = sen["transactions"].toArray();
+                                        if (json["amount"].toInt() > 0)
+                                            tran_obj1["descraption"] = "send to " + json["accountnumber"].toString();
                                         arr.push_front(tran_obj1);
-                                        sen["transactions"] = arr;
-                                        base->UpDate(sen);
+                                        new_tran["transactions"] = arr;
+                                        base->Add(new_tran);
                                     }
-                                }
 
-                                // If sender's transaction history was not updated, create new entry
-                                if (tran_flag1 == false)
-                                {
-                                    QJsonArray arr;
-                                    QJsonObject new_tran;
-                                    new_tran["accountnumber"] = CurrentAcountNumber;
-                                    QDateTime Date = QDateTime::currentDateTime();
-                                    QString TimeString = Date.toString("yyyy-MM-dd HH:mm:ss");
-                                    tran_obj1["date"] = TimeString;
-                                    tran_obj1["amount"] = json["amount"].toInt();
-                                    if (json["amount"].toInt() > 0)
-                                        tran_obj1["descraption"] = "send to " + json["accountnumber"].toString();
-                                    arr.push_front(tran_obj1);
-                                    new_tran["transactions"] = arr;
-                                    base->Add(new_tran);
-                                }
-
-                                // Update recipient's transaction history
-                                for (auto& rec : base->GetjsonVec())
-                                {
-                                    if (rec["accountnumber"].toString() == rr["accountnumber"].toString())
+                                    // Update recipient's transaction history
+                                    for (auto& rec : base->GetjsonVec())
                                     {
-                                        tran_flag2 = true;
+                                        if (rec["accountnumber"].toString() == rr["accountnumber"].toString())
+                                        {
+                                            tran_flag2 = true;
+                                            QDateTime Date = QDateTime::currentDateTime();
+                                            QString TimeString = Date.toString("yyyy-MM-dd HH:mm:ss");
+                                            tran_obj2["date"] = TimeString;
+                                            tran_obj2["amount"] = json["amount"].toInt();
+                                            tran_obj2["descraption"] = "recieved from " + CurrentAcountNumber;
+                                            QJsonArray arr = rec["transactions"].toArray();
+                                            arr.push_front(tran_obj2);
+                                            rec["transactions"] = arr;
+                                            base->UpDate(rec);
+                                        }
+                                    }
+
+                                    // If recipient's transaction history was not updated, create new entry
+                                    if (tran_flag2 == false)
+                                    {
+                                        QJsonArray arr;
+                                        QJsonObject new_tran;
+                                        new_tran["accountnumber"] = json["accountnumber"].toString();
                                         QDateTime Date = QDateTime::currentDateTime();
                                         QString TimeString = Date.toString("yyyy-MM-dd HH:mm:ss");
                                         tran_obj2["date"] = TimeString;
                                         tran_obj2["amount"] = json["amount"].toInt();
                                         tran_obj2["descraption"] = "recieved from " + CurrentAcountNumber;
-                                        QJsonArray arr = rec["transactions"].toArray();
                                         arr.push_front(tran_obj2);
-                                        rec["transactions"] = arr;
-                                        base->UpDate(rec);
+                                        new_tran["transactions"] = arr;
+                                        base->Add(new_tran);
                                     }
                                 }
-
-                                // If recipient's transaction history was not updated, create new entry
-                                if (tran_flag2 == false)
+                                else
                                 {
-                                    QJsonArray arr;
-                                    QJsonObject new_tran;
-                                    new_tran["accountnumber"] = json["accountnumber"].toString();
-                                    QDateTime Date = QDateTime::currentDateTime();
-                                    QString TimeString = Date.toString("yyyy-MM-dd HH:mm:ss");
-                                    tran_obj2["date"] = TimeString;
-                                    tran_obj2["amount"] = json["amount"].toInt();
-                                    tran_obj2["descraption"] = "recieved from " + CurrentAcountNumber;
-                                    arr.push_front(tran_obj2);
-                                    new_tran["transactions"] = arr;
-                                    base->Add(new_tran);
+
                                 }
                             }
                         }

@@ -8,15 +8,6 @@
         "username": "refaathassan"
     },
     {
-        "accountnumber": "543139",
-        "balance": 45,
-        "email": "das@sda.com",
-        "fullname": "dfsfdffdsf",
-        "password": "324325",
-        "type": "user",
-        "username": "refaathass"
-    },
-    {
         "accountnumber": "253727",
         "balance": 25,
         "fullname": "refathasn",
@@ -26,7 +17,8 @@
     },
     {
         "accountnumber": "466723",
-        "balance": 0,
+        "balance": 85,
+        "email": "asd@ads.com",
         "fullname": "news",
         "password": "pass",
         "type": "user",
@@ -76,5 +68,14 @@
         "password": "regerer",
         "type": "user",
         "username": "sertrg"
+    },
+    {
+        "accountnumber": "798916",
+        "balance": 1000,
+        "email": "re@re.re",
+        "fullname": "refaadtjkh",
+        "password": "435325645",
+        "type": "user",
+        "username": "wwwwwwwwwww"
     }
 ]

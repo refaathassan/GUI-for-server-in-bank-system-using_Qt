@@ -1,25 +1,66 @@
- [2024-07-11T18:39:23]  log request 
+ [2024-07-18T17:04:31]  log request 
 
- [2024-07-16T02:04:58]  ""
- [2024-07-16T02:05:05]  ""
- [2024-07-16T02:05:18]  Failed to load RSA public key
- [2024-07-16T02:05:18]  Signature verification failed!
- [2024-07-16T02:06:11]  ""
- [2024-07-16T02:10:32]  ""
- [2024-07-16T02:11:02]  ""
- [2024-07-16T03:08:10]  log request 
+ [2024-07-18T17:04:33]  Request from user   "543139"  to View Transaction History 
 
- [2024-07-16T03:19:12]  log request 
+ [2024-07-18T17:04:40]  Request from user   "543139"  to Make Transaction amount  20 
 
- [2024-07-16T03:19:28]  log request 
+ [2024-07-18T17:04:45]  Request from user   "543139"  to Make Transaction amount  30 
 
- [2024-07-16T03:19:32]  log request 
+ [2024-07-18T17:04:46]  Request from user   "543139"  to View Transaction History 
 
- [2024-07-16T03:19:35]  log request 
+ [2024-07-18T17:04:52]  Request from user   "543139"  to View Transaction History 
 
- [2024-07-16T03:19:45]  log request 
+ [2024-07-18T17:04:54]  Request from user   "543139"  to Get Account Number   
 
- [2024-07-16T03:19:56]  log request 
+ [2024-07-18T17:05:11]  Request from user   "543139"  to Transfer Amount  10  to  "543139" 
 
- [2024-07-16T20:12:28]  log request 
+ [2024-07-18T17:14:47]  log request 
+
+ [2024-07-18T17:14:50]  Request from user   "543139"  to Get Account Number   
+
+ [2024-07-18T17:15:01]  Request from user   "543139"  to Transfer Amount  20  to  "54313" 
+
+ [2024-07-18T17:15:27]  Request from user   "543139"  to Transfer Amount  55  to  "466723" 
+
+ [2024-07-18T17:15:33]  Request from user   "543139"  to View Account Balance  
+
+ [2024-07-18T17:15:34]  Request from user   "543139"  to View Transaction History 
+
+ [2024-07-18T17:15:38]  Request from user   "543139"  to View Transaction History 
+
+ [2024-07-18T17:15:41]  Request from user   "543139"  to View Transaction History 
+
+ [2024-07-18T17:16:20]  Request from user   "543139"  to Transfer Amount  10  to  "466723" 
+
+ [2024-07-18T17:18:46]  Request from user   "543139"  to View Account Balance  
+
+ [2024-07-18T17:18:52]  Request from user   "543139"  to Transfer Amount  20  to  "466723" 
+
+ [2024-07-18T17:18:55]  Request from user   "543139"  to View Account Balance  
+
+ [2024-07-18T17:19:49]  Request from user   "543139"  to Make Transaction amount  50 
+
+ [2024-07-18T17:19:52]  Request from user   "543139"  to View Account Balance  
+
+ [2024-07-18T17:20:08]  log request 
+
+ [2024-07-18T17:20:15]  Request from admin to View Data Base 
+
+ [2024-07-18T17:20:40]  Request from admin to Get Account Number to username   "sertrg" 
+
+ [2024-07-18T17:21:08]  Request from admin to View Account Balance   "95167" 
+
+ [2024-07-18T17:21:31]  Request from admin to View Transaction History to  "34232" 
+
+ [2024-07-18T17:22:09]  Request from admin to Delete User  "543139" 
+
+ [2024-07-18T17:23:09]  Request from admin to AddUser   "wefwewe" 
+
+ [2024-07-18T17:23:45]  Request from admin to UpdateUser  "798916" 
+
+ [2024-07-18T17:24:10]  Request from admin to UpdateUser  "798916" 
+
+ [2024-07-18T17:24:28]  Request from admin to UpdateUser  "798916" 
+
+ [2024-07-18T17:24:37]  Request from admin to UpdateUser  "798916" 
 
